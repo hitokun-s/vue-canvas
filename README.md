@@ -22,7 +22,7 @@ You must/can define your own vue components.
 [Demo](https://hitokun-s.github.io/tool/vue-canvas.html)
 
 HTML:  
-```
+```html
 <canvas id="canvas" v-canvas:cb="onRendered" width="600" height="400">
     <v-bg path="img/world.svg" ord="1"></v-bg>
     <v-text-center ord="2" :message="message"></v-text-center>
@@ -30,7 +30,7 @@ HTML:
 ```
 
 Javascript(for main):  
-```
+```javascript
 var vc = new Vue({
     el: '#canvas',
     data: {
@@ -51,7 +51,7 @@ setTimeout(function () {
 ```
 
 Javascript(for sample components):
-```
+```javascript
 Vue.component('v-bg', Vue.extend({
     props: ["ord", "path"],
     methods: {
