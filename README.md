@@ -17,7 +17,7 @@ A basic framework using vue.js, enabling **declarative markup** for canvas drawi
 - callback after all rendering of child components
 - automatic re-rendering on vue instance updated
 
-You must/can define your own vue components.  
+You must/can define your components for your purpose.  
 
 [Demo](https://hitokun-s.github.io/tool/vue-canvas.html)
 
@@ -25,7 +25,7 @@ HTML:
 ```html
 <canvas id="canvas" v-canvas:cb="onRendered" width="600" height="400">
     <v-bg path="img/world.svg" ord="1"></v-bg>
-    <v-text-center ord="2" :message="message"></v-text-center>
+    <v-text ord="2" x="300" y="200" :message="message"></v-text>
 </canvas>
 ```
 
@@ -40,7 +40,7 @@ var vc = new Vue({
       onRendered: function (ctx) {
         ctx.textAlign = "start";
         ctx.fillStyle = "red";
-        ctx.fillText("rendering done!", 10, 20);
+        ctx.fillText("rendering done!", 10, 30);
       }
     }
 });
@@ -66,20 +66,24 @@ Vue.component('v-bg', Vue.extend({
     }
 }));
 
-Vue.component('v-text-center', Vue.extend({
-    props: ["ord", "message"],
+Vue.component('v-text', Vue.extend({
+    props: ["ord", "message", "x", "y"],
     methods: {
       draw: function (ctx, done) {
         var canvas = ctx.canvas;
         ctx.textAlign = "center";
         ctx.fillStyle = "black";
         ctx.font = "bold 30pt Courier";
-        ctx.fillText(this.message, canvas.width / 2, canvas.height / 2);
+        ctx.fillText(this.message, parseInt(this.x), parseInt(this.y));
         done();
       }
     }
 }));
-```  
+``` 
+
+Result canvas:  
+
+![https://hitokun-s.github.io/tool/img/vue-canvas-sample.png](https://hitokun-s.github.io/tool/img/vue-canvas-sample.png)
 
 # How to define your child component
 
