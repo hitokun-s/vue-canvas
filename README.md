@@ -55,6 +55,7 @@ setTimeout(function () {
 
 Javascript(for sample components):
 ```javascript
+// sample component to draw background image of canvas 
 Vue.component('v-bg', Vue.extend({
     props: ["ord", "path"],
     methods: {
@@ -69,6 +70,7 @@ Vue.component('v-bg', Vue.extend({
     }
 }));
 
+// sample component to draw message with provided coordinates
 Vue.component('v-text', Vue.extend({
     props: ["ord", "message", "x", "y"],
     methods: {
