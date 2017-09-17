@@ -7,9 +7,12 @@ A basic framework using vue.js, enabling **declarative markup** for canvas drawi
 
 - vue.js(ver2)
 
-# 
-
 # Usage
+
+Just load vue-canvas.js, something like:  
+```html
+<script type="text/javascript" src="js/vue-canvas.js"></script>
+```
 
 **vue-canvas.js only provides 'v-canvas' directive**, with functionalities:
 
@@ -17,7 +20,7 @@ A basic framework using vue.js, enabling **declarative markup** for canvas drawi
 - callback after all rendering of child components
 - automatic re-rendering on vue instance updated
 
-You must/can define your components for your purpose.  
+You must/can define child components inside canvas for your purpose.  
 
 [Demo](https://hitokun-s.github.io/tool/vue-canvas.html)
 
