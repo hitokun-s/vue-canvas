@@ -83,12 +83,14 @@ Vue.component('v-text-center', Vue.extend({
 
 # How to define your child component
 
-    Vue.component('[component name]', Vue.extend({
-        props: ["ord", ["prop1", "prop2",...]],
-        methods: {
-          draw: function (ctx, done) {
+```javascript
+Vue.component('[component name]', Vue.extend({
+    props: ["ord", ["prop1", "prop2",...]],
+    methods: {
+        draw: function (ctx, done) {
             ...(drawing using ctx(canvas context))
             done();
-          }
         }
-    }));
+    }
+}));
+```    
