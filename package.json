@@ -1,0 +1,28 @@
+{
+  "name": "vue-canvas",
+  "version": "1.0.0",
+  "description": "![license](https://img.shields.io/github/license/mashape/apistatus.svg)\r [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)",
+  "main": "dist/vue-canvas.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hitokun-s/vue-canvas.git"
+  },
+  "keywords": [
+    "vue.js",
+    "canvas"
+  ],
+  "author": "hitokun-s",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hitokun-s/vue-canvas/issues"
+  },
+  "homepage": "https://github.com/hitokun-s/vue-canvas#README",
+  "devDependencies": {
+    "strip-loader": "^0.1.2",
+    "unminified-webpack-plugin": "^1.2.0",
+    "webpack": "^3.6.0"
+  }
+}

@@ -35,6 +35,8 @@
       var canvas = el;
       var ctx = canvas.getContext('2d');
 
+      ctx.clearRect(0,0,canvas.width, canvas.height);
+
       var promises = drawFuncs.map(function(draw){
         return function(){
           return new Promise(function(resolve){
