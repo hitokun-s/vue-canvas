@@ -3,32 +3,33 @@ vue-canvas
 
 A basic framework using vue.js, enabling **declarative markup** for canvas drawing.
 
-# Requirements
+## Features
 
-- vue.js(ver2)
+**vue-canvas.js provides 'v-canvas' directive**, with these functionalities:
 
-# Usage
-
-Just load vue-canvas.js, something like:  
-```html
-<script type="text/javascript" src="js/vue-canvas.js"></script>
-```
-
-**vue-canvas.js only provides 'v-canvas' directive**, with functionalities:
-
-- orderd rendering of child components
+- orderd rendering of child component
 - callback after all rendering of child components
 - automatic re-rendering on vue instance updated
 
 You must/can define child components inside canvas for your purpose.  
 
+## Requirements
+
+- vue.js(ver2)
+
+## Usage
+
+Just load vue-canvas.js, something like:  
+```html
+<script type="text/javascript" src="js/vue-canvas.js"></script>
+```
 [Demo](https://hitokun-s.github.io/tool/vue-canvas.html)
 
 HTML:  
 ```html
 <canvas id="canvas" v-canvas:cb="onRendered" width="600" height="400">
-    <v-bg path="img/world.svg" ord="1"></v-bg>
-    <v-text ord="2" x="300" y="200" :message="message"></v-text>
+    <v-bg path="img/world.svg" ord="1"></v-bg><!-- sample component -->
+    <v-text ord="2" x="300" y="200" :message="message"></v-text><!-- sample component -->
 </canvas>
 ```
 
@@ -47,9 +48,9 @@ var vc = new Vue({
       }
     }
 });
-// experiment
+// Let's update vue instance data
 setTimeout(function () {
-    vc.message = "Good-bye!";
+    vc.message = "Good-bye!"; // => re-draw canvas automatically!
 }, 2000);
 ```
 
@@ -90,7 +91,7 @@ Result canvas:
 
 ![https://hitokun-s.github.io/tool/img/vue-canvas-sample.png](https://hitokun-s.github.io/tool/img/vue-canvas-sample.png)
 
-# How to define your child component
+## How to define your child component
 
 ```javascript
 Vue.component('[component name]', Vue.extend({
@@ -102,4 +103,13 @@ Vue.component('[component name]', Vue.extend({
         }
     }
 }));
-```    
+``` 
+
+## Licence
+
+[MIT](https://github.com/hitokun-s/vue-canvas/blob/master/LICENCE.txt)
+
+## Author
+
+[hitokun-s](https://github.com/hitokun-s)
+   
