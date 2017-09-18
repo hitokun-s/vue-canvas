@@ -1,4 +1,5 @@
 ![license](https://img.shields.io/github/license/mashape/apistatus.svg)
+[![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
 
 vue-canvas
 ===
@@ -100,8 +101,8 @@ Vue.component('[component name]', Vue.extend({
     props: ["ord", ["prop1", "prop2",...]],
     methods: {
         draw: function (ctx, done) {
-            ...(drawing using ctx(canvas context))
-            done();
+            ...// ctx is canvas context. draw with ctx as you like here.
+            done(); // please call done() at the end of drawing.
         }
     }
 }));
