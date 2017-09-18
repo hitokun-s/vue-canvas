@@ -26,7 +26,7 @@ Just load vue-canvas.js, something like:
 ```html
 <script type="text/javascript" src="js/vue-canvas.js"></script>
 ```
-[Demo](https://hitokun-s.github.io/tool/vue-canvas.html)
+### Sample codes of [Demo](https://hitokun-s.github.io/tool/vue-canvas.html)
 
 HTML:  
 ```html
