@@ -1,7 +1,9 @@
+![license](https://img.shields.io/github/license/mashape/apistatus.svg)
+
 vue-canvas
 ===
 
-A basic framework using vue.js, enabling **declarative markup** for canvas drawing.
+An universal framework using vue.js, enabling **declarative markup** for canvas drawing.
 
 ## Features
 
