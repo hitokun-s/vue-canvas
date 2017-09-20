@@ -108,6 +108,27 @@ Vue.component('[component name]', Vue.extend({
 }));
 ``` 
 
+## How to define complex component
+
+Please assume that,  
+you already defined 2 components('v-score', 'v-baloon'), and you want to define new component('v-baloon-with-score') comprising of them.  
+You can do that like this.  
+
+```javascript
+Vue.component('v-baloon-with-score', Vue.extend({
+    props: ["ord", "score", "x", "y", "lightDirection"],
+    template: '<div><v-score :score="score" :x="parseInt(x) + 25" :y="y - 45" light-direction="left" ord="2"></v-score>'
+    + '<v-baloon title="hoge" :amount="score" :x="x" :y="y" direction="left" ord="1"></v-baloon></div>',
+    methods: {
+      draw: function (ctx, done) {
+        VueCanvas.draw(ctx, this._vnode, done);
+      }
+    }
+  }));
+```
+
+In this case, I wrap 2 components by 'div' tag, but any tag is acceptable.
+
 ## Licence
 
 [MIT](https://github.com/hitokun-s/vue-canvas/blob/master/LICENCE.txt)
