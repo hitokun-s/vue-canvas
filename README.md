@@ -117,17 +117,19 @@ You can do that like this.
 ```javascript
 Vue.component('v-baloon-with-score', Vue.extend({
     props: ["ord", "score", "x", "y", "lightDirection"],
-    template: '<div><v-score :score="score" :x="parseInt(x) + 25" :y="y - 45" light-direction="left" ord="2"></v-score>'
-    + '<v-baloon title="hoge" :amount="score" :x="x" :y="y" direction="left" ord="1"></v-baloon></div>',
+    template: '<v-canvas-wrapper><v-score :score="score" :x="parseInt(x) + 25" :y="y - 45" light-direction="left" ord="2"></v-score>'
+    + '<v-baloon title="hoge" :amount="score" :x="x" :y="y" direction="left" ord="1"></v-baloon></v-canvas-wrapper>',
     methods: {
-      draw: function (ctx, done) {
-        VueCanvas.draw(ctx, this._vnode, done);
+      onRendered: function(ctx, done){
+        console.log("onRendered");
+        done();
       }
     }
   }));
 ```
 
-In this case, I wrap 2 components by 'div' tag, but any tag is acceptable.
+- You just need to wrap child components by **\<v-canvas-wrapper\>\</v-canvas-wrapper\>** tag
+- If you want to do something after rednering children, you can do that in **onRendered** method. 
 
 ## Licence
 

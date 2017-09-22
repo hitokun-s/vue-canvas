@@ -50,6 +50,21 @@
 
       ctx.clearRect(0,0,canvas.width, canvas.height);
 
+      vnode.children.forEach(function(c){
+        if(c.tag && c.componentInstance && c.elm.localName == "v-canvas-wrapper"){
+          var instance = c.componentInstance;
+          instance.draw = function(ctx, done){
+            var onRendered = instance.onRendered;
+            if(onRendered){
+              done = function(){
+                onRendered(ctx, done);
+              }
+            }
+            VueCanvas.draw(ctx, c.componentInstance._vnode, done);
+          }
+        }
+      });
+
       VueCanvas.draw(ctx, vnode, function(){
         binding.value ? binding.value(ctx) : null;
       });
